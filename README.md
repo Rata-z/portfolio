@@ -1,0 +1,1 @@
+-[ ] cards system; -[ ] navigation (home, about, projects, contact); -[ ] cards; -[ ] card's animation;
