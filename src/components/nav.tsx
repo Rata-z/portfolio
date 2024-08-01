@@ -7,35 +7,40 @@ import {
   useCurrentSectionContext,
 } from "@/context/currentSectionContext";
 
-export const sections = [
-  { name: "Home", hash: "#home" },
-  { name: "About", hash: "#about" },
-  { name: "Projects", hash: "#projects" },
-  { name: "Contact", hash: "#contact" },
-];
+import { sections } from "@/lib/data";
+import { motion } from "framer-motion";
 
 function Nav() {
-  const { currentSection, setCurrentSection } = useCurrentSectionContext();
+  const { currentSection, setCurrentSection, setTimeOfLastClick } =
+    useCurrentSectionContext();
   return (
     <section className="z-[999] relative">
-      <div className="fixed left-8 top-1/2 -translate-y-1/2 w-[3.6rem] h-[18rem] rounded-full bg-white">
-        <ul className="flex h-full flex-col flex-wrap justify-evenly items-center text-[0.8rem]">
+      <motion.div
+        className="fixed left-8 top-1/2 -translate-y-1/2 w-[3.6rem] h-[18rem] rounded-full border-opacity-70   border-white border-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2.5, duration: 1 }}
+      >
+        <ul className="flex h-full flex-col flex-wrap justify-evenly items-center text-[0.75rem]">
           {sections.map((link) => (
             <li key={link.hash}>
               <Link
                 className={clsx(
-                  "text-gray-600 hover:text-gray-900 transition ",
-                  { "text-red-500": currentSection === link.name }
+                  "text-gray-500 hover:text-gray-200 transition ",
+                  { "text-gray-100": currentSection === link.name }
                 )}
                 href={link.hash}
-                onClick={() => setCurrentSection(link.name)}
+                onClick={() => {
+                  setCurrentSection(link.name);
+                  setTimeOfLastClick(Date.now());
+                }}
               >
                 {link.name}
               </Link>
             </li>
           ))}
         </ul>
-      </div>
+      </motion.div>
     </section>
   );
 }

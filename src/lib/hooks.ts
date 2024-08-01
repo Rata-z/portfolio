@@ -8,11 +8,13 @@ export function useSectionInView(sectionName: SectionName, threshold = 0.75) {
   const { ref, inView } = useInView({
     threshold,
   });
-  const { setCurrentSection } = useCurrentSectionContext();
+  const { setCurrentSection, timeOfLastClick } = useCurrentSectionContext();
 
   useEffect(() => {
-    setCurrentSection(sectionName);
-  }, [inView, setCurrentSection, sectionName]);
+    if (inView && Date.now() - timeOfLastClick > 1000) {
+      setCurrentSection(sectionName);
+    }
+  }, [inView, setCurrentSection, timeOfLastClick, sectionName]);
 
   return {
     ref,

@@ -5,7 +5,7 @@ import Contact from "@/components/contact";
 
 export default function Home() {
   return (
-    <main className="relative flex justify-center overflow-hidden flex-col mx-auto  max-w-screen-2xl w-[50rem] bg-red-400">
+    <main className="relative flex justify-center overflow-hidden flex-col mx-auto  max-w-screen-2xl w-[50rem]">
       <Hero />
       <About />
       <Projects />
