@@ -3,6 +3,7 @@ import { useSectionInView } from "@/lib/hooks";
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import React from "react";
 import { FaArrowDown } from "react-icons/fa";
+import Canvas from "./canvas/canvas";
 
 function Hero() {
   const { ref } = useSectionInView("Home");
@@ -22,7 +23,7 @@ function Hero() {
     <section
       ref={ref}
       id="home"
-      className="h-screen w-full flex justify-center relative flex-col items-center  "
+      className="h-screen w-full flex justify-center relative flex-col bg-transparent items-center  "
     >
       <h1 className="text-7xl">
         <motion.span
@@ -37,7 +38,7 @@ function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          I'm Maciek
+          I'm Maciej
         </motion.span>
       </h1>
       <motion.div

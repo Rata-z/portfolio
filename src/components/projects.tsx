@@ -12,7 +12,7 @@ function Projects() {
       id="projects"
       className="w-full flex flex-col justify-center  scroll-mt-28 mb-28"
     >
-      <h2 className="text-4xl text-center mb-8">Main Projects</h2>
+      <h2 className="text-4xl text-center mb-12">Main Projects</h2>
       <BentoGrid>
         {projects.map((project) => (
           <BentoGridItem
@@ -21,6 +21,7 @@ function Projects() {
             description={project.description}
             projectLink={project.link}
             tech={project.tech}
+            presentation={project.presentation}
           />
         ))}
       </BentoGrid>

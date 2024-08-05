@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Nav from "@/components/nav";
 import CurrentSectionContextProvider from "@/context/currentSectionContext";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const nunito_sans = Nunito_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -19,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <body className={`${inter.className}  text-white relative`}>
+      <body
+        className={`${nunito_sans.className}  text-white relative bg-gradient-to-b from-black via-black to-[rgb(1,4,24)]`}
+      >
         <CurrentSectionContextProvider>
           <Nav />
           {children}

@@ -14,7 +14,7 @@ function Nav() {
   const { currentSection, setCurrentSection, setTimeOfLastClick } =
     useCurrentSectionContext();
   return (
-    <section className="z-[999] relative">
+    <section className="z-[999] hidden lg:block relative">
       <motion.div
         className="fixed left-8 top-1/2 -translate-y-1/2 w-[3.6rem] h-[18rem] rounded-full border-opacity-70   border-white border-2"
         initial={{ opacity: 0 }}
@@ -27,7 +27,7 @@ function Nav() {
               <Link
                 className={clsx(
                   "text-gray-500 hover:text-gray-200 transition ",
-                  { "text-gray-100": currentSection === link.name }
+                  { "text-white": currentSection === link.name }
                 )}
                 href={link.hash}
                 onClick={() => {

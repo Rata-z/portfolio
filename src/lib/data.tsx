@@ -25,6 +25,7 @@ type Section = {
 };
 type Project = {
   name: string;
+  presentation: string;
   description: string;
   link: string;
   tech: string[];
@@ -58,6 +59,8 @@ export const techLogos: TechLogo[] = [
 export const projects: Project[] = [
   {
     name: "Planter",
+    presentation:
+      "https://raw.githubusercontent.com/Rata-z/PlanterWeb/main/client/src/assets/icons/logoLong.svg",
     description:
       "A mobile application created to help users track and manage the watering cycles of their plants.",
     link: "https://github.com/Rata-z/Planter",
@@ -65,6 +68,8 @@ export const projects: Project[] = [
   },
   {
     name: "PlanterWeb",
+    presentation:
+      "https://raw.githubusercontent.com/Rata-z/PlanterWeb/main/client/src/assets/icons/logoLong.svg",
     description:
       "A full-stack web application designed for plant enthusiasts to create, explore, and engage with a plant care oriented blogs.",
     link: "https://github.com/Rata-z/PlanterWeb",
