@@ -14,7 +14,7 @@ function Projects() {
     >
       <h2 className="text-4xl text-center mb-12">Main Projects</h2>
       <BentoGrid>
-        {projects.map((project) => (
+        {projects.map((project, id) => (
           <BentoGridItem
             key={project.name}
             title={project.name}
@@ -22,6 +22,8 @@ function Projects() {
             projectLink={project.link}
             tech={project.tech}
             presentation={project.presentation}
+            colors={project.colors}
+            id={id}
           />
         ))}
       </BentoGrid>

@@ -5,6 +5,7 @@ import { techLogos } from "@/lib/data";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
+import clsx from "clsx";
 export const BentoGrid = ({
   className,
   children,
@@ -33,6 +34,8 @@ export const BentoGridItem = ({
   presentation,
   projectLink,
   tech,
+  colors,
+  id,
 }: {
   className?: string;
   title?: string | React.ReactNode;
@@ -42,6 +45,8 @@ export const BentoGridItem = ({
   presentation: string;
   projectLink?: string;
   tech?: string[];
+  colors: string[];
+  id: number;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -59,30 +64,48 @@ export const BentoGridItem = ({
         className
       )}
     >
-      <div className="w-full relative h-full">
-        <Image
-          unoptimized
-          src={presentation}
-          fill
-          alt={`${title} presentation image.`}
-        />
+      <div
+        style={{
+          background: `linear-gradient(${
+            id % 2 === 0 ? "to bottom right" : "to bottom"
+          } ,${colors[0]}, ${colors[1]})`,
+
+          backgroundSize: "200% 200%",
+        }}
+        className={clsx(
+          "  w-full rounded-md  flex justify-center items-center  relative h-full",
+          id % 2 === 0 ? "animate-gradient-tl " : "animate-gradient-bt"
+        )}
+      >
+        <div className="size-3/4 relative">
+          <Image
+            unoptimized
+            src={presentation}
+            fill
+            alt={`${title} presentation image.`}
+          />
+        </div>
       </div>
-      <div className="flex flex-col  justify-end gap-3">
+      <div className="flex flex-col  justify-end gap-4">
         {icon}
-        <div className="font-sans font-bold text-[2rem] text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
+        <div className="font-sans font-bold text-[2rem] text-neutral-600 dark:text-neutral-200  mt-2">
           {title}
         </div>
-        <div className="font-sans font-normal mb-1 text-neutral-600 text-[1.5rem] dark:text-neutral-300">
+        <div className="font-sans font-normal  text-neutral-600 text-[1.5rem] dark:text-neutral-300">
           {description}
         </div>
         <div className="w-full flex flex-row justify-between">
-          <div className="flex flex-row text-[1.5rem] gap-2">
+          <div className="flex flex-row text-[1.5rem] gap-1">
             {tech?.map((techName) => {
               const logo = techLogos.find(
                 (logo) => logo.name === techName
               )?.icon;
               return (
-                <div key={techName} title={techName}>
+                <div
+                  key={techName}
+                  className="p-1 rounded-full  hover:bg-sky-600 transition-colors"
+                  title={techName}
+                >
                   {logo ? logo : <span>{techName}</span>}
                 </div>
               );

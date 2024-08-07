@@ -5,6 +5,8 @@ import "./globals.css";
 import Footer from "@/components/footer";
 import Nav from "@/components/nav";
 import CurrentSectionContextProvider from "@/context/currentSectionContext";
+import { ParallaxProvider } from "react-scroll-parallax";
+import { Providers } from "@/lib/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,11 +27,11 @@ export default function RootLayout({
       <body
         className={`${nunito_sans.className}  text-white relative bg-gradient-to-b from-black via-black to-[rgb(1,4,24)]`}
       >
-        <CurrentSectionContextProvider>
+        <Providers>
           <Nav />
           {children}
           <Footer />
-        </CurrentSectionContextProvider>
+        </Providers>
       </body>
     </html>
   );

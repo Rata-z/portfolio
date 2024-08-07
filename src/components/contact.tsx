@@ -1,11 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Button } from "@nextui-org/button";
 import { CiLinkedin, CiMail } from "react-icons/ci";
-import { FiGithub } from "react-icons/fi";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
+import { Parallax, useParallax } from "react-scroll-parallax";
+import Image from "next/image";
+import bitmapa from "../../bitmapa.svg";
 
 function Contact() {
   const { ref, inView } = useSectionInView("Contact");
@@ -15,12 +17,23 @@ function Contact() {
       setPlayedAnimation(true);
     }
   }, [inView]);
+
   return (
     <section
       ref={ref}
       id="contact"
-      className="flex flex-col justify-center w-full h-[20rem] mb-20"
+      className="flex flex-col justify-center w-full h-[30rem]  pb-28"
     >
+      {/* <Parallax
+        speed={-100}
+        className="absolute overflow-hidden w-full h-screen bg-red-100 flex justify-end left-0 bottom-100"
+      >
+        <Image
+          src={bitmapa}
+          alt="grass"
+          className=" bg-red-300  overflow-hidden"
+        />
+      </Parallax> */}
       <h2 className="text-4xl text-center mb-8">Contact Me</h2>
       <motion.div
         ref={ref}

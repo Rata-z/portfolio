@@ -17,12 +17,12 @@ const fadeAnimationVariants = {
 
 function TechStack() {
   return (
-    <ul className="w-full flex flex-row gap-[1rem] justify-center flex-wrap">
+    <ul className="w-full flex flex-row gap-[0.5rem] justify-center flex-wrap">
       {techLogos.map((tech, index) => (
         <motion.li
           key={tech.name}
           title={tech.name}
-          className="text-[2rem] font-bold"
+          className="text-[2rem] font-bold p-1.5 rounded-full  hover:bg-sky-600 transition-colors "
           variants={fadeAnimationVariants}
           initial="initial"
           whileInView="animate"

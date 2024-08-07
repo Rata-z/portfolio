@@ -10,7 +10,7 @@ export default function Home() {
       <div className="absolute top-0 left-0 w-screen h-screen z-0 o">
         <Canvas />
       </div>
-      <div className="max-w-screen-2xl w-full px-2 lg:px-0 lg:w-[50rem] mx-auto  justify-center">
+      <div className="max-w-screen-2xl w-full px-2 lg:px-0 lg:w-[50rem] mx-auto justify-center">
         <Hero />
         <About />
         <Projects />
