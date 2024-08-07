@@ -8,6 +8,9 @@ import { motion } from "framer-motion";
 import { Parallax, useParallax } from "react-scroll-parallax";
 import Image from "next/image";
 import bitmapa from "../../bitmapa.svg";
+import grass2 from "../../grass2.svg";
+import WindmillSVG from "./windmill";
+import WindmillSvg from "./windmillSvg";
 
 function Contact() {
   const { ref, inView } = useSectionInView("Contact");
@@ -22,18 +25,24 @@ function Contact() {
     <section
       ref={ref}
       id="contact"
-      className="flex flex-col justify-center w-full h-[30rem]  pb-28"
+      className="flex flex-col justify-center w-full h-[45rem] pb-52"
     >
-      {/* <Parallax
-        speed={-100}
-        className="absolute overflow-hidden w-full h-screen bg-red-100 flex justify-end left-0 bottom-100"
-      >
+      <div className="absolute w-screen h-screen flex items-end justify-end bottom-0 left-0">
+        <Image
+          src={grass2}
+          alt="grass"
+          className=" w-full absolute left-0 bottom-[1px] "
+        />
+        <div className="size-36 absolute bottom-[42%] left-[29%]">
+          <WindmillSvg />
+        </div>
         <Image
           src={bitmapa}
           alt="grass"
-          className=" bg-red-300  overflow-hidden"
+          className=" w-full absolute left-0 bottom-0 "
         />
-      </Parallax> */}
+      </div>
+
       <h2 className="text-4xl text-center mb-8">Contact Me</h2>
       <motion.div
         ref={ref}
@@ -48,7 +57,7 @@ function Contact() {
             className="rounded-full p-7 text-lg "
             startContent={<CiMail className="mb-0.5" size={28} />}
           >
-            Let's get in touch
+            Let's get in touch!
           </Button>
         </Link>
       </motion.div>

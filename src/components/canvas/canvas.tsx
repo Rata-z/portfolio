@@ -14,7 +14,7 @@ interface Star {
 function Canvas(props: Props) {
   const {
     backgroundColor = "rgba(0,0,0,1)",
-    height = typeof window !== "undefined" ? window.innerHeight : 600,
+    height = typeof window !== "undefined" ? window.innerHeight + 100 : 600,
     width = typeof window !== "undefined" ? window.innerWidth : 800,
   } = props;
 
@@ -23,6 +23,14 @@ function Canvas(props: Props) {
     const canvas = ref.current;
     if (canvas) {
       const c = canvas.getContext("2d");
+      const gradient = c?.createLinearGradient(
+        window.innerWidth / 2,
+        0,
+        window.innerWidth / 2,
+        window.innerHeight + 100
+      );
+      gradient?.addColorStop(0, "black");
+      gradient?.addColorStop(1, "#00030d");
 
       if (c) {
         let w = width;
@@ -54,7 +62,7 @@ function Canvas(props: Props) {
         let stars: Star[] = makeStars(w / 2);
 
         const clear = () => {
-          c.fillStyle = backgroundColor;
+          c.fillStyle = gradient;
           c.fillRect(0, 0, canvas.width, canvas.height);
         };
 

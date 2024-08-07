@@ -10,7 +10,7 @@ function Projects() {
     <section
       ref={ref}
       id="projects"
-      className="w-full flex flex-col justify-center  scroll-mt-28 mb-28"
+      className="w-full flex flex-col justify-center  scroll-mt-28 "
     >
       <h2 className="text-4xl text-center mb-12">Main Projects</h2>
       <BentoGrid>

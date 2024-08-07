@@ -16,17 +16,17 @@ function Nav() {
   return (
     <section className="z-[999] hidden lg:block relative">
       <motion.div
-        className="fixed left-8 top-1/2 -translate-y-1/2 w-[3.6rem] h-[18rem] rounded-full border-opacity-70   border-white border-2"
+        className="fixed left-8 top-1/2 -translate-y-1/2 w-[4.5rem] h-[19rem] rounded-full border-opacity-70   border-white border-3"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.5, duration: 1 }}
       >
-        <ul className="flex h-full flex-col flex-wrap justify-evenly items-center text-[0.75rem]">
+        <ul className="flex h-full flex-col flex-wrap justify-evenly items-center text-[0.9rem]">
           {sections.map((link) => (
             <li key={link.hash}>
               <Link
                 className={clsx(
-                  "text-gray-500 hover:text-gray-200 transition ",
+                  "text-gray-400 hover:text-gray-200 transition ",
                   { "text-white": currentSection === link.name }
                 )}
                 href={link.hash}

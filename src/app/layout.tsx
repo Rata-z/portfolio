@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="!scroll-smooth">
       <body
-        className={`${nunito_sans.className}  text-white relative bg-gradient-to-b from-black via-black to-[rgb(1,4,24)]`}
+        className={`${nunito_sans.className}  text-white relative bg-gradient-to-b from-[#010208]  to-[#000517]`}
       >
         <Providers>
           <Nav />

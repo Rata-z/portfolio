@@ -5,7 +5,7 @@ import { FiGithub } from "react-icons/fi";
 
 function Footer() {
   return (
-    <footer className="h-12 flex w-full    justify-center ">
+    <footer className="h-12 flex w-full bg-[rgb(5,7,8)]    justify-center ">
       <div className=" max-w-screen-md w-full border-t-1 border-white/35 h-full flex justify-between items-center px-4 ">
         <p className="text-sm">© 2024 Maciej. All rights reserved.</p>
         <div className="flex flex-row items-center gap-6">
