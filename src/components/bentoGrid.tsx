@@ -60,7 +60,7 @@ export const BentoGridItem = ({
       ref={ref}
       style={{ scale: scaleProgress, opacity: opacityProgress }}
       className={cn(
-        "relative overflow-hidden row-span-1  rounded-xl group/bento  p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between items-center flex flex-col space-y-4",
+        "relative overflow-hidden row-span-1 z-[100]  rounded-xl group/bento  p-5 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between items-center flex flex-col space-y-4",
         className
       )}
     >

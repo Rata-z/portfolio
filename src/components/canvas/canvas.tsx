@@ -23,16 +23,16 @@ function Canvas(props: Props) {
     const canvas = ref.current;
     if (canvas) {
       const c = canvas.getContext("2d");
-      const gradient = c?.createLinearGradient(
-        window.innerWidth / 2,
-        0,
-        window.innerWidth / 2,
-        window.innerHeight + 100
-      );
-      gradient?.addColorStop(0, "black");
-      gradient?.addColorStop(1, "#00030d");
 
       if (c) {
+        const gradient = c.createLinearGradient(
+          window.innerWidth / 2,
+          0,
+          window.innerWidth / 2,
+          window.innerHeight + 100
+        );
+        gradient.addColorStop(0, "black");
+        gradient.addColorStop(1, "#00030d");
         let w = width;
         let h = height;
 
